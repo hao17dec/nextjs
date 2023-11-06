@@ -1,11 +1,11 @@
 import {Inter} from 'next/font/google'
 import '@/app/globals.css'
 import React from "react";
-import styles from "@/app/page.module.css";
-import Link from "next/link";
+import styles from "@/app/page.module.scss";
 
 import StyledComponentsRegistry from '@/lib/AntdRegistry';
-import Footer from "@/app/(who_sale)/Layout/Footer";
+import Footer from "@/app/(who_sale)/Components/Footer";
+import NavBar from "@/app/(who_sale)/Components/NavBar";
 
 
 const inter = Inter({subsets: ['latin']})
@@ -25,17 +25,18 @@ export default function RootLayout({children}: Readonly<{
         <html lang="en">
         <body className={inter.className}>
         <div className={styles.banner}>
-            <p className={styles.description}>Account Service</p>
         </div>
-        <nav className={styles.nav}>
-            <Link href="/">Home</Link> |
-            <Link href="/account-service-top">Account Service Top</Link> |
-            <Link href="/account-service-demo">Account</Link>
-        </nav>
+        <NavBar></NavBar>
+        <div className={styles.banner}>
+        </div>
         <div className={styles.banner}>
         </div>
         <main className={styles.main}>
-            <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
+            <StyledComponentsRegistry>
+                <div className={styles.container}>
+                    {children}
+                </div>
+            </StyledComponentsRegistry>
         </main>
         <Footer></Footer>
         </body>

@@ -1,9 +1,5 @@
 .main {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  padding: 6rem;
+  padding: 1rem;
   min-height: 80vh;
 }
 
@@ -226,4 +222,11 @@
   to {
     transform: rotate(0deg);
   }
+}
+#container,
+.container {
+  max-width: 1280px;
+  min-width: 1000px;
+  width: 100% !important;
+  margin: 0 auto;
 }

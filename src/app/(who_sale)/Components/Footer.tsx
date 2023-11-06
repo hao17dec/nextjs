@@ -5,7 +5,7 @@ async function getData() {
     // The return value is *not* serialized
     // You can return Date, Map, Set, etc.
 
-    return res.text()
+    return await res.text() ?? '';
 }
 
 

@@ -1,12 +1,7 @@
-import {Button, ConfigProvider} from 'antd';
-import theme from "@/theme/themeConfig";
-
-export default function AccountServiceTop() {
+export default async function AccountServiceTop() {
     return (
-        <ConfigProvider theme={theme}>
-            <section>
-                <div>Account service</div>
-            </section>
-        </ConfigProvider>
+        <section>
+            <div>Account Service Top</div>
+        </section>
     )
 }
