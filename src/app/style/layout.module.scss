@@ -1,0 +1,33 @@
+.wbNavbar {
+  padding: 50px;
+}
+
+.sideTitle {
+  font-size: 14px;
+  color: #000066;
+  border-bottom: #cbd5e0 1px solid;
+  padding: 5px;
+}
+
+.sideCol {
+  padding: 2px;
+  background: #e8edf1;
+  margin: 0 0 10px 0;
+  text-align: left;
+  width: 236px;
+
+  .sideBox {
+    border: #fff 1px solid;
+    padding: 5px;
+    ul {
+      border-top: #fff 1px solid;
+      margin: 0 0 5px;
+      list-style: none;
+      li {
+        border-bottom: #a3b4c6 1px dotted;
+        padding: 6px;
+      }
+    }
+  }
+}
+

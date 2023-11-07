@@ -1,10 +1,10 @@
 import {Inter} from 'next/font/google'
 import '@/app/globals.css'
 import React from "react";
-import styles from "@/app/page.module.scss";
+import styles from "@/app/style/page.module.scss";
 import Link from "next/link";
 
-import StyledComponentsRegistry from '@/lib/AntdRegistry';
+import StyledComponentsRegistry from '@/app/lib/AntdRegistry';
 
 
 const inter = Inter({subsets: ['latin']})

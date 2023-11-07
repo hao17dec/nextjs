@@ -1,5 +1,5 @@
-import {Button, ConfigProvider} from 'antd';
-import theme from "@/theme/themeConfig";
+import {ConfigProvider} from 'antd';
+import theme from "@/app/theme/themeConfig";
 
 export default function AccountServiceTop() {
     return (

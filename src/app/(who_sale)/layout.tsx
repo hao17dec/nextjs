@@ -1,11 +1,12 @@
 import {Inter} from 'next/font/google'
 import '@/app/globals.css'
 import React from "react";
-import styles from "@/app/page.module.scss";
+import styles from "@/app/style/page.module.scss";
 
-import StyledComponentsRegistry from '@/lib/AntdRegistry';
+import StyledComponentsRegistry from '@/app/lib/AntdRegistry';
 import Footer from "@/app/(who_sale)/Components/Footer";
 import NavBar from "@/app/(who_sale)/Components/NavBar";
+import {BannerTop} from "@/app/(who_sale)/Components/BannerTop";
 
 
 const inter = Inter({subsets: ['latin']})
@@ -25,6 +26,7 @@ export default function RootLayout({children}: Readonly<{
         <html lang="en">
         <body className={inter.className}>
         <div className={styles.banner}>
+            <BannerTop></BannerTop>
         </div>
         <NavBar></NavBar>
         <div className={styles.banner}>

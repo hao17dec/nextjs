@@ -5,11 +5,12 @@ async function getData() {
     // The return value is *not* serialized
     // You can return Date, Map, Set, etc.
 
-    return await res.text() ?? '';
+    // return await res.text() ?? '';
+    return '';
 }
 
 
 export default async function Footer() {
     const data = await getData()
-    return <article  className="text-container" dangerouslySetInnerHTML={{__html: data}}/>
+    return <article className="text-container" dangerouslySetInnerHTML={{__html: data}}/>
 };

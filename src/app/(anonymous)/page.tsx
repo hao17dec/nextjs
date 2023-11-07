@@ -1,5 +1,5 @@
 import {Button, Col, ConfigProvider, Row} from 'antd';
-import theme from '@/theme/themeConfig';
+import theme from '@/app/theme/themeConfig';
 import Link from "next/link";
 
 export default function Home() {

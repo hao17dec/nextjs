@@ -1,10 +1,11 @@
 import {Inter} from 'next/font/google'
 import '@/app/globals.css'
 import React from "react";
-import theme from "@/theme/themeConfig";
-import {Button, Col, ConfigProvider, Row} from "antd";
+import theme from "@/app/theme/themeConfig";
+import {Col, ConfigProvider, Row} from "antd";
 import {TreeLink} from "@/app/objects/TreeLink";
 import Link from "next/link";
+import styles from "@/app/style/layout.module.scss"
 
 
 const inter = Inter({subsets: ['latin']})
@@ -19,13 +20,13 @@ export const metadata = {
 function Tree(props: any) {
     return (
         <>
-            <h2>{props.title}</h2>
+            <h3 className={styles.sideTitle}>{props.title}</h3>
             <ul>
                 {props.childrenLink.map((child: TreeLink, i: any) => {
                     return <li key={i}>
-                            <Link href={child.href}>
-                                {child.name}
-                            </Link>
+                        <Link href={child.href}>
+                            {child.name}
+                        </Link>
                     </li>
                 })}
             </ul>
@@ -47,12 +48,17 @@ export default async function AccountServiceTopLayout({children}: Readonly<{
 
     return (
         <ConfigProvider theme={theme}>
-            <Row>
-                <Col span={12}>
-                    {data.map((treeLink: TreeLink, i: any) => <Tree key={i} title={treeLink.name}
-                                                                    childrenLink={treeLink.children}/>)}
+            <Row justify={"space-between"}>
+                <Col span={5}>
+                    <div className={styles.sideCol}>
+                        <div className={styles.sideBox}>
+                            {data.map((treeLink: TreeLink, i: any) => <Tree key={i} title={treeLink.name}
+                                                                            childrenLink={treeLink.children}/>)}
+                        </div>
+
+                    </div>
                 </Col>
-                <Col span={12}>
+                <Col span={19}>
                     <section>
                         <div>{children}</div>
                     </section>
