@@ -49,7 +49,7 @@ export default async function AccountServiceTopLayout({children}: Readonly<{
     return (
         <ConfigProvider theme={theme}>
             <Row justify={"space-between"}>
-                <Col span={5}>
+                <Col span={24} md={24} xl={5}>
                     <div className={styles.sideCol}>
                         <div className={styles.sideBox}>
                             {data.map((treeLink: TreeLink, i: any) => <Tree key={i} treeLink={treeLink}/>)}
@@ -57,7 +57,7 @@ export default async function AccountServiceTopLayout({children}: Readonly<{
 
                     </div>
                 </Col>
-                <Col span={19}>
+                <Col span={24}  md={24} xl={18}>
                     <section>
                         <div>{children}</div>
                     </section>

@@ -246,7 +246,6 @@ async function treeLinkGenerate(slug: string | null) {
 
 export async function GET(request: Request) {
     console.log('Api call Side Link')
-
     const {searchParams} = new URL(request.url)
     const slug = searchParams.get('slug')
     let sideLinks = await treeLinkGenerate(slug);

@@ -7,16 +7,15 @@ import StyledComponentsRegistry from '@/app/lib/AntdRegistry';
 import Footer from "@/app/_components/Footer";
 import NavBar from "@/app/_components/NavBar";
 import {BannerTop} from "@/app/_components/BannerTop";
-import Script from "next/script";
+import {Metadata} from "next";
 
 
 const inter = Inter({subsets: ['latin']})
 
 //define metadata
-export const metadata = {
+export const metadata: Metadata = {
     title: 'Research Next',
     description: 'This is research next description',
-
 }
 
 
