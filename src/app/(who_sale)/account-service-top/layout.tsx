@@ -20,9 +20,9 @@ export const metadata = {
 function Tree(props: any) {
     return (
         <>
-            <h3 className={styles.sideTitle}>{props.title}</h3>
+            <h3 className={styles.sideTitle}>{props.treeLink.name}</h3>
             <ul>
-                {props.childrenLink.map((child: TreeLink, i: any) => {
+                {props.treeLink?.children?.map((child: TreeLink, i: any) => {
                     return <li key={i}>
                         <Link href={child.href}>
                             {child.name}
@@ -52,8 +52,7 @@ export default async function AccountServiceTopLayout({children}: Readonly<{
                 <Col span={5}>
                     <div className={styles.sideCol}>
                         <div className={styles.sideBox}>
-                            {data.map((treeLink: TreeLink, i: any) => <Tree key={i} title={treeLink.name}
-                                                                            childrenLink={treeLink.children}/>)}
+                            {data.map((treeLink: TreeLink, i: any) => <Tree key={i} treeLink={treeLink}/>)}
                         </div>
 
                     </div>

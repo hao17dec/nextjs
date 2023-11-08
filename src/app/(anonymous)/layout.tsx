@@ -1,7 +1,8 @@
 import {Inter} from 'next/font/google'
 import '@/app/globals.css'
 import React from "react";
-import styles from "@/app/style/page.module.scss";
+import styles from '@/app/style/next-js-default-style.module.scss'
+
 import Link from "next/link";
 
 import StyledComponentsRegistry from '@/app/lib/AntdRegistry';

@@ -1,27 +1,27 @@
-import {Button, Col, ConfigProvider, Row} from 'antd';
-import theme from '@/app/theme/themeConfig';
+import styles from '@/app/style/next-js-default-style.module.scss'
+import {Button} from "antd";
 import Link from "next/link";
 
 export default function Home() {
     return (
-        <ConfigProvider theme={theme}>
-            <Row>
-                <Col span={24}>
-                    <Button type="primary">
-                        <Link href="/account-service-top">
-                            Click to go to account service top
-                        </Link>
-                    </Button>
-                </Col>
-            </Row>
-            <Row>
-                <Col span={24}>
-                    If when you click the button above, the page will be full-reloaded, because anonymous layout is
-                    different with who_sale layout.
-                </Col>
+        <div className={styles.csCenter}>
+            <div className={styles.description}>
+                <p>
+                    In NextJS there are many ways to create a layout, and Layout can be diff by grouped routes . This is
+                    the
+                    default
+                    layout.
 
-            </Row>
+                    If you click the button below, you will be <b>full-reloaded</b> and go to the account service top
+                    page, it happen because 2 layout are different.
+                </p>
+            </div>
 
-        </ConfigProvider>
+            <Button type="primary">
+                <Link href="/account-service-top">
+                    Click to go to account service top
+                </Link>
+            </Button>
+        </div>
     )
 }

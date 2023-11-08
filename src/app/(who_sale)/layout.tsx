@@ -4,9 +4,10 @@ import React from "react";
 import styles from "@/app/style/page.module.scss";
 
 import StyledComponentsRegistry from '@/app/lib/AntdRegistry';
-import Footer from "@/app/(who_sale)/Components/Footer";
-import NavBar from "@/app/(who_sale)/Components/NavBar";
-import {BannerTop} from "@/app/(who_sale)/Components/BannerTop";
+import Footer from "@/app/_components/Footer";
+import NavBar from "@/app/_components/NavBar";
+import {BannerTop} from "@/app/_components/BannerTop";
+import Script from "next/script";
 
 
 const inter = Inter({subsets: ['latin']})

@@ -1,16 +1,15 @@
 'use client';
 
 import React from 'react';
-import { createCache, extractStyle, StyleProvider } from '@ant-design/cssinjs';
-import type Entity from '@ant-design/cssinjs/es/Cache';
 import { useServerInsertedHTML } from 'next/navigation';
+import { createCache, extractStyle, StyleProvider } from '@ant-design/cssinjs/lib';
 
-const StyledComponentsRegistry = ({ children }: React.PropsWithChildren) => {
-    const cache = React.useMemo<Entity>(() => createCache(), []);
+export default function StyledComponentsRegistry({ children }: { children: React.ReactNode }) {
+    const [cache] = React.useState(() => createCache());
+
     useServerInsertedHTML(() => (
-        <style id="antd" dangerouslySetInnerHTML={{ __html: extractStyle(cache, true) }} />
+        <style id="antd" dangerouslySetInnerHTML={{ __html: extractStyle(cache, true) }}></style>
     ));
-    return <StyleProvider cache={cache}>{children}</StyleProvider>;
-};
 
-export default StyledComponentsRegistry;
+    return <StyleProvider cache={cache}>{children}</StyleProvider>;
+}

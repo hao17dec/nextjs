@@ -49,7 +49,10 @@ export default async function AccountSerViceDetailPage({params}: { params: { slu
     }
     let content = pageInfo.content ?? '';
     return <>
-        <h2>Name : {pageInfo.name}</h2>
-        <div dangerouslySetInnerHTML={{__html: content}}/>
+        <h2>{pageInfo.name}</h2>
+        <div>
+            Content : <div dangerouslySetInnerHTML={{__html: content}}/>
+        </div>
+
     </>
 }
