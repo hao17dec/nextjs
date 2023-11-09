@@ -11,10 +11,6 @@ import StyledComponentsRegistry from '@/app/lib/AntdRegistry';
 const inter = Inter({subsets: ['latin']})
 
 //define metadata
-export const metadata = {
-    title: 'Research Next',
-    description: 'This is research next description',
-}
 export default function RootLayout({children}: Readonly<{
     children: React.ReactNode
 }>) {

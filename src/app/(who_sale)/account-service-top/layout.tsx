@@ -6,17 +6,10 @@ import {Col, ConfigProvider, Row} from "antd";
 import {TreeLink} from "@/app/objects/TreeLink";
 import Link from "next/link";
 import styles from "@/app/style/layout.module.scss"
+import UaLink from "@/app/_components/UaLink";
 
 
 const inter = Inter({subsets: ['latin']})
-
-//define metadata
-export const metadata = {
-    title: 'Research Next',
-    description: 'This is research next description',
-
-}
-
 function Tree(props: any) {
     return (
         <>
@@ -24,9 +17,7 @@ function Tree(props: any) {
             <ul>
                 {props.treeLink?.children?.map((child: TreeLink, i: any) => {
                     return <li key={i}>
-                        <Link href={child.href}>
-                            {child.name}
-                        </Link>
+                        <UaLink href={child.href} content={child.name}/>
                     </li>
                 })}
             </ul>
@@ -57,7 +48,7 @@ export default async function AccountServiceTopLayout({children}: Readonly<{
 
                     </div>
                 </Col>
-                <Col span={24}  md={24} xl={18}>
+                <Col span={24} md={24} xl={18}>
                     <section>
                         <div>{children}</div>
                     </section>

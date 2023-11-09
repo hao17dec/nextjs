@@ -8,17 +8,22 @@ import Footer from "@/app/_components/Footer";
 import NavBar from "@/app/_components/NavBar";
 import {BannerTop} from "@/app/_components/BannerTop";
 import {Metadata} from "next";
+import Script from "next/script";
 
 
 const inter = Inter({subsets: ['latin']})
 
 //define metadata
-export const metadata: Metadata = {
+
+export const metadata = {
+    metadataBase: new URL('http://localhost:3000'),
     title: 'Research Next',
     description: 'This is research next description',
+    openGraph: {
+        title: 'Research Next',
+        description: 'This is research next description',
+    }
 }
-
-
 export default function RootLayout({children}: Readonly<{
     children: React.ReactNode
 }>) {

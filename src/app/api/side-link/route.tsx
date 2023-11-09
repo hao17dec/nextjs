@@ -202,10 +202,6 @@ async function treeLinkGenerate(slug: string | null) {
                     content: 'モトセールス規約',
                 }
             ]
-        },
-        {
-            name: 'Service 4',
-            href: '/account-service-top/service-4'
         }
     ]
     parentLinks.push({
@@ -223,22 +219,22 @@ async function treeLinkGenerate(slug: string | null) {
         let newTreeLinks: TreeLink = {
             name: '',
             href: '',
-
         };
-        parentLinks.forEach((treeLink: TreeLink) => {
-
-            if (treeLink.href === slug) {
-                newTreeLinks = treeLink
+        for ( let elementParent of parentLinks) {
+            if (elementParent.href === slug) {
+                newTreeLinks = elementParent;
+                break;
             }
-            if (treeLink.children) {
-                treeLink.children.forEach((childLink: TreeLink) => {
-                    if (childLink.href === slug) {
-                        newTreeLinks = childLink
-
+            if (elementParent.children) {
+                for ( let element of elementParent.children) {
+                    if (element.href === slug) {
+                        newTreeLinks = element;
+                        break;
                     }
-                })
+                }
             }
-        })
+
+        }
         return newTreeLinks;
     }
     return parentLinks;

@@ -1,7 +1,10 @@
 import styles from '@/app/style/next-js-default-style.module.scss'
 import {Button} from "antd";
 import Link from "next/link";
-
+export const metadata = {
+    title: 'Research Next',
+    description: 'This is research next description',
+}
 export default function Home() {
     return (
         <div className={styles.csCenter}>
@@ -16,11 +19,8 @@ export default function Home() {
                     page, it happen because 2 layout are different.
                 </p>
             </div>
-
-            <Button type="primary">
-                <Link href="/account-service-top">
-                    Click to go to account service top
-                </Link>
+            <Button href={"/account-service-top"} type="primary">
+                Click to go to account service top
             </Button>
         </div>
     )
